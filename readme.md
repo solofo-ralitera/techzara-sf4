@@ -15,7 +15,7 @@ Install sf et dépendances :
  
 - Créer le fichier .env à la racine : https://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 
-Start php internal server
+Launch php's internal server
 - php -S localhost::8000 -t ./public 
 - Navigateur : http://localhost:8000/
 
@@ -31,3 +31,13 @@ Créer un controller pour la route "/"
 - App\Controller\DefaultController
 
 
+**Database dsn config**
+Ajouter dans .env le dsn
+DATABASE_URL=mysql://solofo:solofo@localhost:3306/openschedule
+
+**Example de service : Database**
+- Créer l'interface App\Interfaces\Database
+- Créer la class App\Services\Mysql
+- Injecter la class Mysql dans le DefaultController
+- Si necessaire, ajoute dans services.yaml
+    App\Interfaces\Database: '@App\Services\Database'
