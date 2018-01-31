@@ -35,9 +35,19 @@ Créer un controller pour la route "/"
 Ajouter dans .env le dsn
 DATABASE_URL=mysql://solofo:solofo@localhost:3306/openschedule
 
-**Example de service : Database**
-- Créer l'interface App\Interfaces\Database
-- Créer la class App\Services\Mysql
-- Injecter la class Mysql dans le DefaultController
-- Si necessaire, ajoute dans services.yaml
-    App\Interfaces\Database: '@App\Services\Database'
+**Injection de dépendance**
+- Créer l'interface App\Interfaces\DatabaseInterface
+- Créer la class App\Services\Mysql implements le Database
+- Si necessaire, ajoute dans services.yaml => permet à symfony de savoir la class à instancier à la place de l'interface
+    App\Interfaces\DatabaseInterface: '@App\Services\Mysql'
+
+- Créer l'interface App\Interfaces\ToDoInterface
+- Créer la class App\Classes\ToDo implements le ToDoInterface
+- Injection de DatabaseInterface dans le contructeur de ToDo : 
+    - Dans services.yaml => permet d'injecter un instance de Mysql dans le constructeur 
+        App\Classes\ToDo:
+            arguments: [ '@App\Services\Mysql' ]
+     
+
+- Injecter ToDoInterface dans le constructeur DefaultController::index => Injecter plutôt l'interface ToDoInterface
+

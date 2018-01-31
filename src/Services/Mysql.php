@@ -2,9 +2,9 @@
 namespace App\Services;
 
 
-use App\Interfaces\Database;
+use App\Interfaces\DatabaseInterface;
 
-class Mysql implements Database {
+class Mysql implements DatabaseInterface {
 
 	/**
 	 * @var \PDO

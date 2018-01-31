@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 
-use App\Interfaces\Database;
+use App\Interfaces\ToDoInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -10,12 +10,12 @@ class DefaultController {
 	/**
 	 * @Route("/", name="home")
 	 *
-	 * @param Database $db
+	 * @param ToDoInterface $todo
+	 *
 	 * @return JsonResponse
 	 */
-	public function index(Database $db): JsonResponse {
-		return new JsonResponse(
-			$db->select('SELECT uuid()')
-		);
+	public function index(ToDoInterface $todo): JsonResponse {
+		$todo->create('Test');
+		return new JsonResponse($todo->toArray());
 	}
 }
