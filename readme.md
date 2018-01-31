@@ -45,6 +45,8 @@ Créer un controller pour la route "/"
 
 **Controller**
 - Create ToDoController
+- Inject doctrine RegistryInterface
+- Créer deux routes pour le get et le add
 
 
 
