@@ -66,4 +66,9 @@ Mieux : Installer encore (webpack) le remplacant d'assetic :
 **Form / validation**
 - Install validator => permet de valider les form
     php composer.phar require form validator 
+- Create Controller ToDoController::create
+- Inject all dependencies : Request, twig, doctrine, form...
+- Edit Form\TodoType : data_class, fields...
+- Add form into twig template : form_start, form_end, form_widget
+- Handel post into the same controller : isValid, isSubmitted...
 

@@ -10,9 +10,13 @@ namespace App\Controller;
 
 
 use App\Entity\Todo;
+use App\Form\TodoType;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Twig\Environment;
 
 class ToDoController {
 	/**
@@ -48,5 +52,23 @@ class ToDoController {
 			'id' => $todo->getId(),
 			'name' => $todo->getName(),
 		]);
+	}
+
+	/**
+	 * @Route("/todo/create", name="todo_create", methods={"GET"})
+	 * @param RegistryInterface $doctrine
+	 *
+	 * @return Response
+	 */
+	public function create(
+		Environment $twig,
+		RegistryInterface $doctrine,
+		FormFactoryInterface $formFactory
+	): Response {
+		$form = $formFactory->createBuilder(TodoType::class)->getForm();
+
+		return new Response($twig->render('todo/todo.html.twig', [
+			'form' => $form->createView()
+		]));
 	}
 }
