@@ -30,4 +30,21 @@ Installer le profiler pour debuger
 Créer un controller pour la route "/"
 - App\Controller\DefaultController
 
+- Install maker : php composer.phar require maker => permet d'utiliser la commande make:
+
+**Install Doctrine**
+- php composer.phar require orm
+- Changer/ajouter dans .env
+    DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db
+- create entity : php bin/console make:entity Todo
+- Add fields, getters and setters into Todo 
+
+**Update database**
+- php bin/console doctrine:migrations:diff
+- php bin/console doctrine:migrations:migrate
+
+**Controller**
+- Create ToDoController
+
+
 
