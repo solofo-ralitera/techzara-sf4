@@ -48,5 +48,7 @@ Créer un controller pour la route "/"
 - Inject doctrine RegistryInterface
 - Créer deux routes pour le get et le add
 
-
+**Form / validation**
+- Install validator => permet de valider les form
+    php composer.phar require form validator 
 
