@@ -30,4 +30,19 @@ Installer le profiler pour debuger
 Créer un controller pour la route "/"
 - App\Controller\DefaultController
 
+**Twig**
+
+- Injecter le twig environement dans le controller DefaultController::index
+- twig->render pour générer le template
+- Passer en second paramètre les variables {{ ... }}
+
+**Assets**
+Installer asset
+- php composer.phar require asset
+
+Mieux : Installer encore (webpack) le remplacant d'assetic :
+- php composer.phar require encore
+
+
+
 
