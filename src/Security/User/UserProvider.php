@@ -23,7 +23,7 @@ class UserProvider implements UserProviderInterface{
 	 */
 	public function loadUserByUsername( $username ): UserInterface {
 		// TODO: Implement loadUserByUsername() method.
-		$user = new User( $username = 'admin', $password = 'admin', $salt = '', $roles = []);
+		$user = new User( $username, $password = $username, $salt = '', $roles = []);
 		return $user;
 	}
 
@@ -35,10 +35,9 @@ class UserProvider implements UserProviderInterface{
 	 * object can just be merged into some internal array of users / identity
 	 * map.
 	 *
-	 * @return UserInterface
+	 * @param UserInterface $user
 	 *
-	 * @throws \Symfony\Component\Security\Core\Exception\UsernameNotFoundException
-	 * @throws UnsupportedUserException if the user is not supported
+	 * @return UserInterface
 	 */
 	public function refreshUser( UserInterface $user ): UserInterface {
 		// TODO: Implement refreshUser() method.

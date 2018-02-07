@@ -23,7 +23,7 @@ class PasswordEncoder implements PasswordEncoderInterface {
 	 * Checks a raw password against an encoded password.
 	 *
 	 * @param string $encoded An encoded password
-	 * @param string $raw A raw password
+	 * @param string $raw A raw password (the submitted password)
 	 * @param string $salt The salt
 	 *
 	 * @return bool true if the password is valid, false otherwise
