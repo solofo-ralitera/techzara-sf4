@@ -31,3 +31,17 @@ Créer un controller pour la route "/"
 - App\Controller\DefaultController
 
 
+**Auhtentication**
+https://symfony.com/doc/current/security/custom_provider.html
+https://symfony.com/doc/current/security/entity_provider.html
+
+Installer la couche security
+- php composer.phar require security
+- Create User class : App\Security\User
+- Create User provider : App\Security\UserProvider
+- Update security.yaml
+    - providers
+    - encoders
+    - firewalls
+    
+    

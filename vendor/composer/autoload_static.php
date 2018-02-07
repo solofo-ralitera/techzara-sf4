@@ -25,7 +25,10 @@ class ComposerStaticInit6f7dc553211bf66021e8c818ffd95769
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Stopwatch\\' => 28,
+            'Symfony\\Component\\Security\\' => 27,
             'Symfony\\Component\\Routing\\' => 26,
+            'Symfony\\Component\\PropertyAccess\\' => 33,
+            'Symfony\\Component\\Inflector\\' => 28,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
@@ -39,6 +42,7 @@ class ComposerStaticInit6f7dc553211bf66021e8c818ffd95769
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
+            'Symfony\\Bundle\\SecurityBundle\\' => 30,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
             'Symfony\\Bridge\\Twig\\' => 20,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
@@ -93,9 +97,21 @@ class ComposerStaticInit6f7dc553211bf66021e8c818ffd95769
         array (
             0 => __DIR__ . '/..' . '/symfony/stopwatch',
         ),
+        'Symfony\\Component\\Security\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/security',
+        ),
         'Symfony\\Component\\Routing\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/routing',
+        ),
+        'Symfony\\Component\\PropertyAccess\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/property-access',
+        ),
+        'Symfony\\Component\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/inflector',
         ),
         'Symfony\\Component\\HttpKernel\\' => 
         array (
@@ -148,6 +164,10 @@ class ComposerStaticInit6f7dc553211bf66021e8c818ffd95769
         'Symfony\\Bundle\\TwigBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/twig-bundle',
+        ),
+        'Symfony\\Bundle\\SecurityBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/security-bundle',
         ),
         'Symfony\\Bundle\\FrameworkBundle\\' => 
         array (

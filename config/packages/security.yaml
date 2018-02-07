@@ -1,0 +1,27 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        in_memory: { memory: ~ }
+        custom_user:
+          id: App\Security\User\UserProvider
+
+    encoders:
+        App\Security\User\User:
+          algorithm: plaintext
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern:    ^/
+            http_basic: ~
+            provider: custom_user
+
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # https://symfony.com/doc/current/security/form_login_setup.html
