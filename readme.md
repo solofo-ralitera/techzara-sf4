@@ -16,7 +16,7 @@ Install sf et dépendances :
 - Créer le fichier .env à la racine : https://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 
 Start php internal server
-- php -S localhost::8000 -t ./public 
+- php -S localhost:8000 -t ./public 
 - Navigateur : http://localhost:8000/
 
 **Install dépendances et default controller**
