@@ -26,6 +26,14 @@ class Todo
 	private $name;
 
 	/**
+	 * @var TodoList
+	 *
+	 * @ORM\ManyToOne(targetEntity="TodoList", inversedBy="todos")
+	 * @ORM\JoinColumn(referencedColumnName="id", onDelete="CASCADE")
+	 */
+	private $list;
+
+	/**
 	 * @return string
 	 */
 	public function getId(): string {
@@ -61,4 +69,25 @@ class Todo
 		return $this;
 	}
 
+	/**
+	 * Set list
+	 *
+	 * @param TodoList $list
+	 *
+	 * @return Todo
+	 */
+	public function setList(TodoList $list = null): Todo {
+		$this->list = $list;
+		return $this;
+	}
+
+	/**
+	 * Get type
+	 *
+	 * @return TodoList
+	 */
+	public function getList(): ?TodoList
+	{
+		return $this->list;
+	}
 }
